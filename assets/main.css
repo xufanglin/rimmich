@@ -1,0 +1,518 @@
+:root {
+    /* Colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #fcfcfc;
+    --bg-muted: #f5f5f5;
+    --bg-hover: #eeeeee;
+
+    --text-primary: #1a1a1a;
+    --text-secondary: #555555;
+    --text-muted: #999999;
+    --text-on-btn: #444444;
+
+    --border-color: #e0e0e0;
+    --border-hover: #cccccc;
+    --border-focus: #1a1a1a;
+
+    --accent-color: #28a745;
+    --danger-color: #e53935;
+    --danger-bg: #fff0f0;
+    --danger-hover-bg: #ffebee;
+
+    /* Spacing & Sizing */
+    --radius-lg: 12px;
+    --radius-md: 8px;
+    --radius-sm: 6px;
+    --radius-round: 50%;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 20px;
+    --spacing-xl: 30px;
+
+    --control-height: 36px;
+
+    /* Animations */
+    --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg-primary);
+    height: 100vh;
+    overflow: hidden;
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.app-container {
+    padding: var(--spacing-lg);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-primary);
+}
+
+/* Typography */
+.title,
+.title-inline {
+    text-align: center;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.title {
+    margin: 0 0 var(--spacing-lg) 0;
+    font-size: 1.8em;
+}
+
+.title-inline {
+    margin: 0;
+    font-size: 1.5em;
+    letter-spacing: -0.02em;
+    grid-column: 2;
+}
+
+.header-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    width: 100%;
+}
+
+.header-row>*:first-child {
+    justify-self: start;
+}
+
+.header-row>*:last-child {
+    justify-self: end;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.select-input,
+.text-input {
+    width: 100%;
+    height: var(--control-height);
+    font-family: inherit;
+    color: var(--text-primary);
+    padding: 0 12px;
+    font-size: 14px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    cursor: pointer;
+    outline: none;
+    transition: var(--transition-base);
+}
+
+.text-input {
+    cursor: text;
+}
+
+.select-input:hover,
+.text-input:hover {
+    border-color: var(--border-hover);
+}
+
+.select-input:focus,
+.text-input:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.03);
+}
+
+.input-group {
+    display: flex;
+    gap: var(--spacing-sm);
+    width: 100%;
+}
+
+.input-group .text-input {
+    flex: 1;
+    width: auto;
+}
+
+/* Info Box */
+.info-box {
+    padding: var(--spacing-md) var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
+}
+
+.info-label {
+    color: var(--text-secondary);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+.info-value {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-primary);
+    word-break: break-all;
+    font-weight: 400;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.button-row {
+    display: flex;
+    gap: var(--spacing-sm);
+    width: 100%;
+}
+
+.btn,
+.btn-small {
+    height: var(--control-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition-base);
+    user-select: none;
+    padding: 0 var(--spacing-md);
+    background: var(--bg-muted);
+    color: var(--text-on-btn);
+    font-family: inherit;
+}
+
+.btn {
+    flex: 1;
+}
+
+.btn:hover:not(:disabled),
+.btn-small:hover {
+    background: var(--bg-hover);
+    border-color: var(--border-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn:active:not(:disabled) {
+    background: var(--border-color);
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    background: var(--bg-muted);
+    color: var(--text-muted);
+    border-color: var(--bg-muted);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btn svg+span,
+.btn-primary svg+span {
+    margin-left: var(--spacing-sm);
+}
+
+.btn-small {
+    padding: 0 16px;
+    flex-shrink: 0;
+    min-width: 60px;
+}
+
+/* .btn-primary is currently handled by .btn base styles */
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    transition: var(--transition-base);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-round);
+}
+
+.icon-btn:hover {
+    color: var(--text-primary);
+    background: var(--bg-muted);
+    transform: scale(1.1);
+}
+
+.btn-icon-small {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    transition: var(--transition-base);
+    padding: 6px 12px;
+}
+
+.btn-icon-small:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.btn-icon-small svg {
+    flex-shrink: 0;
+}
+
+.btn-icon-small span {
+    margin-left: var(--spacing-sm);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-icon-small.delete {
+    color: var(--danger-color);
+}
+
+.btn-icon-small.delete:hover {
+    background: var(--danger-bg);
+}
+
+/* File List */
+.file-list-container {
+    flex: 1;
+    overflow-y: auto;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    min-height: 0;
+}
+
+.file-list-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.file-list-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.file-list-container::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+.file-list-container::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+.file-list-header {
+    margin-top: 0;
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+.file-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.file-item {
+    padding: 6px 0;
+    border-bottom: 1px solid var(--bg-muted);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* 改为左对齐 */
+    color: var(--text-secondary);
+    font-size: 13px;
+    word-break: break-all;
+}
+
+.user-item {
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--bg-muted);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* 保持两端对齐 */
+}
+
+.file-item:last-child,
+.user-item:last-child {
+    border-bottom: none;
+}
+
+.file-bullet {
+    margin-right: var(--spacing-xs);
+    /* 减小间距 */
+    color: var(--accent-color);
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* Settings Specific */
+.settings-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.management-group {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-user-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--bg-primary);
+}
+
+@media (min-width: 500px) {
+    .add-user-row {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .input-username {
+        flex: 1;
+        /* 较短 */
+        min-width: 80px;
+    }
+
+    .input-api-key {
+        flex: 2.5;
+        /* 较长，API Key 通常很长 */
+    }
+
+    .btn-add-user {
+        flex: 0.6;
+        /* 较短，仅包含图标和简短文字 */
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+.divider {
+    height: 1px;
+    background: var(--bg-muted);
+    margin: 0;
+}
+
+.user-list-container {
+    padding: 0 var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.user-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--bg-muted);
+}
+
+.user-name {
+    font-weight: 400;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+}
+
+.icon-star {
+    margin-right: var(--spacing-sm);
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -2px;
+    color: var(--text-primary);
+}
+
+.user-actions {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--bg-secondary);
+    transition: var(--transition-base);
+}
+
+.user-actions:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-sm);
+}
+
+.user-actions .btn-icon-small:not(:last-child) {
+    border-right: 1px solid var(--border-color);
+}
+
+/* Status Bar */
+.status-text {
+    margin-top: var(--spacing-lg);
+    color: var(--text-secondary);
+    font-size: 13px;
+    text-align: center;
+    min-height: 1.2em;
+    border-top: 1px solid var(--bg-muted);
+    padding-top: var(--spacing-md);
+}
+
+/* Empty State */
+.empty-state,
+.empty-state-small {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 14px;
+    gap: var(--spacing-sm);
+}
+
+.empty-state-small {
+    padding: var(--spacing-lg) 0;
+    font-size: 13px;
+}
