@@ -1,0 +1,28 @@
+[package]
+name = "rimmich"
+version = "0.1.0"
+authors = ["xufanglin"]
+edition = "2024"
+
+
+[dependencies]
+dioxus = { version = "0.7.3", features = ["router"] }
+serde = { version = "1.0.228", features = ["derive"] }
+dirs = "6.0.0"
+toml = "0.9.8"
+dioxus-free-icons = {version="0.10.0",features=["feather"]}
+rfd = "0.17.2"
+reqwest = { version = "0.13.1", features = ["multipart", "json", "stream"] }
+tokio = { version = "1.49.0", features = ["full"] }
+infer = "0.19.0"
+tokio-util = { version = "0.7.18", features = ["codec"] }
+chrono = "0.4.43"
+anyhow = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+tracing-appender = "0.2"
+
+
+[features]
+default = ["desktop"]
+desktop = ["dioxus/desktop"]

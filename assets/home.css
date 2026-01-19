@@ -1,0 +1,228 @@
+:root {
+    --color-bg: whitesmoke;
+    --color-text: #1a1a1a;
+    --color-muted: #666666;
+    --border-color: #1a1a1a;
+    --border-radius: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --font-size-sm: 13px;
+    --font-size-md: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 20px;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    text-align: center;
+    font-family: -apple-system;
+    font-weight: var(--font-weight-normal);
+}
+
+.icon {
+    height: 24px;
+    width: 24px;
+}
+
+/* Header */
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    position: relative;
+    margin-bottom: var(--spacing-lg);
+}
+
+.header-row h2 {
+    margin: 0;
+}
+
+.header-row button {
+    position: absolute;
+    right: var(--spacing-lg);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.header-row button:hover {
+    opacity: 0.7;
+}
+
+.header-row button:active {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+/* User Group */
+.user-group {
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+}
+
+.user-group label {
+    font-weight: var(--font-weight-medium);
+    display: block;
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-md);
+    text-transform: uppercase;
+}
+
+.user-group select {
+    width: 100%;
+    height: 36px;
+    background-color: var(--color-bg);
+    padding: var(--spacing-md);
+    font-size: var(--font-size-md);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-muted);
+    cursor: pointer;
+    outline: none;
+    transition: var(--transition);
+}
+
+/* Server Info */
+.server-info {
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--color-muted);
+    border-radius: var(--border-radius);
+    text-align: left;
+}
+
+.server-info span,
+.server-info p {
+    font-size: var(--font-size-md);
+}
+
+.server-info span {
+    display: block;
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-xs);
+    text-transform: uppercase;
+}
+
+.server-info p {
+    margin: 0;
+}
+
+/* Files List */
+.files-list-container {
+    height: 420px;
+    overflow-y: auto;
+    border: 1px solid var(--color-muted);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+}
+
+.files-list-container::-webkit-scrollbar {
+    width: var(--spacing-sm);
+}
+
+.files-list-container::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+.files-list-container::-webkit-scrollbar-thumb {
+    background: var(--color-muted);
+    border-radius: var(--border-radius);
+}
+
+.files-list-container h4 {
+    margin: 0 0 var(--spacing-xs);
+    font-size: var(--font-size-md);
+    text-transform: uppercase;
+    font-weight: var(--font-weight-medium);
+    text-align: left;
+}
+
+.files-list-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.files-list-container li {
+    padding: var(--spacing-xs) 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: var(--font-size-sm);
+    word-break: break-all;
+    color: var(--color-muted);
+}
+
+.files-list-container span {
+    margin-right: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    flex-shrink: 0;
+    color: var(--color-muted);
+}
+
+/* Empty State */
+.no-files-selected {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-md);
+    font-style: italic;
+    color: var(--color-muted);
+    gap: var(--spacing-md);
+    text-transform: uppercase;
+}
+
+/* Buttons */
+.button-row {
+    display: flex;
+    gap: var(--spacing-sm);
+    width: 100%;
+    padding: var(--spacing-md) 0;
+}
+
+.button-row button {
+    flex: 1;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-muted);
+    background-color: var(--color-bg);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-normal);
+    transition: var(--transition);
+    user-select: none;
+    padding: var(--spacing-md) 0;
+}
+
+.button-row button:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+}
+
+.button-row button:active {
+    transform: scale(0.95);
+}
+
+/* Status */
+.status-text {
+    font-size: var(--font-size-xl);
+    border-top: 1px solid var(--color-muted);
+    padding-top: var(--spacing-lg);
+    min-height: var(--font-size-xl);
+    font-weight: var(--font-weight-normal);
+}

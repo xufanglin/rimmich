@@ -1,0 +1,12 @@
+[application]
+
+[desktop.cargo]
+default_features = true
+features = []
+
+[bundle]
+name = "rImmich"
+identifier = "com.uploader.rimmich"
+icon = ["assets/icon.png"]
+resources = ["assets"]
+publisher = "xufang"

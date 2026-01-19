@@ -1,0 +1,282 @@
+:root {
+    --color-bg: whitesmoke;
+    --color-text: #1a1a1a;
+    --color-muted: #666666;
+    --color-danger: #e53935;
+    --border-color: #1a1a1a;
+    --border-radius: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --font-size-sm: 13px;
+    --font-size-md: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 20px;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    text-align: center;
+    font-family: -apple-system;
+    font-weight: var(--font-weight-normal);
+}
+
+.icon {
+    height: 24px;
+    width: 24px;
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    position: relative;
+    margin-bottom: var(--spacing-lg);
+}
+
+.header-row h2 {
+    margin: 0;
+}
+
+.header-row button {
+    position: absolute;
+    left: var(--spacing-lg);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.header-row button:hover {
+    opacity: 0.7;
+}
+
+.header-row button:active {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.language-group,
+.concurrency-group,
+.server-group {
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+}
+
+.user-group {
+    height: 395px;
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+    border: 1px solid var(--color-muted);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm)
+}
+
+.user-group label,
+.language-group label,
+.concurrency-group label,
+.server-group label {
+    font-weight: var(--font-weight-medium);
+    display: block;
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-md);
+    text-transform: uppercase;
+}
+
+.user-input-group,
+.language-input-group,
+.concurrency-input-group,
+.server-input-group {
+    text-align: left;
+    display: flex;
+    width: 100%;
+}
+
+.concurrency-input-group input,
+.server-input-group input {
+    flex: 1;
+    width: auto;
+    height: 36px;
+    background-color: var(--color-bg);
+    padding: var(--spacing-md);
+    font-size: var(--font-size-md);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-muted);
+    outline: none;
+    transition: var(--transition);
+    box-sizing: border-box;
+    margin-right: var(--spacing-sm);
+}
+
+.adduser-row button,
+.language-input-group button,
+.concurrency-input-group button,
+.server-input-group button {
+    width: 60px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-muted);
+    background-color: var(--color-bg);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-normal);
+    padding: var(--spacing-md) 0;
+    box-sizing: border-box;
+    transition: var(--transition);
+}
+
+
+.adduser-row button:hover,
+.language-input-group button:hover,
+.concurrency-input-group button:hover,
+.server-input-group button:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+}
+
+.adduser-row button:active,
+.language-input-group button:active,
+.concurrency-input-group button:active,
+.server-input-group button:active {
+    transform: scale(0.95);
+}
+
+.language-input-group select {
+    flex: 1;
+    width: auto;
+    height: 36px;
+    background-color: var(--color-bg);
+    padding: var(--spacing-md);
+    font-size: var(--font-size-md);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-muted);
+    outline: none;
+    transition: var(--transition);
+    box-sizing: border-box;
+    margin-right: var(--spacing-sm);
+}
+
+.adduser-row {
+    display: flex;
+    width: 100%;
+}
+
+.user-input {
+    width: 150px;
+    height: 36px;
+    background-color: var(--color-bg);
+    padding: var(--spacing-md);
+    font-size: var(--font-size-md);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-muted);
+    outline: none;
+    transition: var(--transition);
+    box-sizing: border-box;
+    margin-right: var(--spacing-sm);
+}
+
+.apikey-input {
+    flex: 1;
+    width: auto;
+    height: 36px;
+    background-color: var(--color-bg);
+    padding: var(--spacing-md);
+    font-size: var(--font-size-md);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-muted);
+    outline: none;
+    transition: var(--transition);
+    box-sizing: border-box;
+    margin-right: var(--spacing-sm);
+}
+
+.user-management-group {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-xs);
+}
+
+.user-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-bg);
+}
+
+.user-name {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+}
+
+.user-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg);
+    cursor: pointer;
+    width: 80px;
+    height: 36px;
+    padding: var(--spacing-md);
+    font-size: var(--font-size-md);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-muted);
+    transition: var(--transition);
+    box-sizing: border-box;
+}
+
+.action-btn:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+}
+
+.action-btn:active {
+    transform: scale(0.95);
+}
+
+.delete-btn {
+    color: var(--color-danger);
+}
+
+.delete-btn:hover {
+    background-color: var(--color-danger);
+    color: var(--color-bg);
+    border-color: var(--color-danger);
+}
+
+.divider {
+    height: 1px;
+    background: var(--color-muted);
+    margin: var(--spacing-md);
+}
+
+
+/* Status */
+.status-text {
+    font-size: var(--font-size-xl);
+    border-top: 1px solid var(--color-muted);
+    padding-top: var(--spacing-lg);
+    margin-top: auto;
+    min-height: var(--font-size-xl);
+    font-weight: var(--font-weight-normal);
+}
