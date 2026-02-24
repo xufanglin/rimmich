@@ -1,4 +1,4 @@
-use crate::services::i18n::Language;
+use crate::core::i18n::Language;
 use anyhow::{Context, Result};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;

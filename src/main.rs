@@ -1,7 +1,6 @@
 use dioxus::{LaunchBuilder, desktop};
 use rimmich::components::App;
-use rimmich::services::config::{AppConfig, load_config};
-use rimmich::services::log::init_logger;
+use rimmich::core::{AppConfig, init_logger, load_config};
 
 fn main() {
     // 加载配置文件，失败时使用默认配置
