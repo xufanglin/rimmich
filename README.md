@@ -62,13 +62,13 @@ dx bundle --desktop \
 
 #### Automated Deployment (GitHub Actions)
 
-This project includes a pre-configured GitHub Actions workflow (`.github/workflows/release.yml`). When you push a tag starting with `v` to the repository (e.g., `v0.1.0`), it will automatically trigger the build process and publish the generated `.dmg` installer to the GitHub Releases page.
+This project includes a pre-configured GitHub Actions workflow (`.github/workflows/release.yml`). When you push a tag starting with `v` to the repository (e.g., `v0.3.0`), it will automatically trigger the build process and publish the generated `.dmg` installer to the GitHub Releases page.
 
 **Trigger release process:**
 
 ```bash
-git tag v0.1.0
-git push origin v0.1.0
+git tag v0.3.0
+git push origin v0.3.0
 ```
 
 ### Usage Instructions
@@ -180,8 +180,8 @@ dx bundle --desktop \
 **触发发布流程：**
 
 ```bash
-git tag v0.1.0
-git push origin v0.1.0
+git tag v0.3.0
+git push origin v0.3.0
 ```
 
 ### 使用说明
